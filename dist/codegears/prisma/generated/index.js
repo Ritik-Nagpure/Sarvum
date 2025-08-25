@@ -152,7 +152,7 @@ const config = {
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "../../../../.env"
+    "rootEnvPath": null
   },
   "relativePath": "..",
   "clientVersion": "6.14.0",
@@ -170,8 +170,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"./generated\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Todo {\n  id        Int      @id @default(autoincrement())\n  title     String\n  status    String\n  completed Boolean  @default(false)\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n}\n\nmodel User {\n  id    Int    @id @unique @default(autoincrement())\n  name  String\n  email String @unique\n}\n",
-  "inlineSchemaHash": "0875b2ebf2caebc5bfab6922fca18992ca6841daac41bebf894111a4f438ab78",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\n// generator codegearsClient {\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"./generated\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Todo {\n  id        Int      @id @default(autoincrement())\n  title     String\n  status    String\n  completed Boolean  @default(false)\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n}\n\nmodel User {\n  id    Int    @id @unique @default(autoincrement())\n  name  String\n  email String @unique\n}\n",
+  "inlineSchemaHash": "526cae6a76fb97808672fd8c87fb16cc5abe87fe7b1d14bf6d81015d83cd8889",
   "copyEngine": true
 }
 
