@@ -1,0 +1,41 @@
+{
+  "name": "sarvum",
+  "version": "1.0.0 @Beta",
+  "description": "All in one website to AI tools, shop, chat , Dailty tasks scheduler, team management, etc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devserve": "nodemon dist/index.js",
+    "devbuild": "concurrently \"npx tsc --watch\" \"npx tsc-alias --watch\" \"npm run copy-generated\"",
+    "build": "npx tsc",
+    "serve": "node dist/index.js",
+    "copy-generated_old": "cp -r src/codegears/prisma/generated dist/codegears/prisma/generated",
+    "copy-generated": "cpy src/*/prisma/generated/**/*.js dist --parents"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ritik-Nagpure/Sarvum.git"
+  },
+  "keywords": [],
+  "author": "Ritik Nagpure",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Ritik-Nagpure/Sarvum/issues"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "prisma": "^6.14.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "concurrently": "^9.2.0",
+    "cpy-cli": "^6.0.0",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.16",
+    "typescript": "^5.9.2"
+  }
+}
