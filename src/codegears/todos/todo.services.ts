@@ -1,7 +1,7 @@
 import { payloadTodo } from '../../utils/interfaces.js'
 import { validTodoStrings } from './todo.validator.js'
  
-import prisma from '@codegearsClient';
+import prisma from '../../prisma/index.js';
 
 export const createTodoService = (todoModel: payloadTodo) => {
     console.log('Inside create todo services', todoModel);

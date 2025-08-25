@@ -1,0 +1,28 @@
+//🧩Don't Edit this file.✨Generated in Tue Aug 26 2025 00:30:26 GMT+0530 (India Standard Time)✨
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Todos
+
+model Todo {
+  id        Int      @id @default(autoincrement())
+  title     String
+  status    String
+  completed Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model User {
+  id    Int    @id @unique @default(autoincrement())
+  name  String
+  email String @unique
+}

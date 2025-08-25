@@ -107,7 +107,7 @@
         "src/astrobit/prisma/client.ts"
       ],
       "@codegearsClient": [
-        "src/codegears/prisma/client.ts"
+        "./prisma/client.ts"
       ]
     }
   },
