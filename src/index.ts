@@ -20,13 +20,13 @@ sarvum.use(express.urlencoded({ extended: true }));
 
 
 // --> Astrobit Application
-sarvum.use('/astrobit', astrobit);
+sarvum.use('/api/astrobit', astrobit);
 // --> Codegears Application
-sarvum.use('/codegears', codegears);
+sarvum.use('/api/codegears', codegears);
 // --> Rihal Rides Application
-sarvum.use('/rihal/rides', rides);
+sarvum.use('/api/rihal/rides', rides);
 // --> Rihal Vastra Application 
-sarvum.use('/rihal/vastra', vastra);
+sarvum.use('/api/rihal/vastra', vastra);
 
 // when nothing matches use this
 sarvum.use((req: Request, res: Response) => {

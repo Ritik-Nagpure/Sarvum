@@ -1,4 +1,5 @@
-import prisma from '../prisma/client.js';
+import { PrismaClient } from '@prisma/client';
+const prisma = new PrismaClient();
 export const createTodoService = (todoModel) => {
     console.log('Inside create todo services', todoModel);
     let crt = async () => {

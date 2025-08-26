@@ -11,10 +11,10 @@ const sarvum = express();
 sarvum.use(cors());
 sarvum.use(express.json());
 sarvum.use(express.urlencoded({ extended: true }));
-sarvum.use('/astrobit', astrobit);
-sarvum.use('/codegears', codegears);
-sarvum.use('/rihal/rides', rides);
-sarvum.use('/rihal/vastra', vastra);
+sarvum.use('/api/astrobit', astrobit);
+sarvum.use('/api/codegears', codegears);
+sarvum.use('/api/rihal/rides', rides);
+sarvum.use('/api/rihal/vastra', vastra);
 sarvum.use((req, res) => {
     res.sendStatus(404);
 });

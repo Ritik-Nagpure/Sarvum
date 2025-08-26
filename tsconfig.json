@@ -103,17 +103,11 @@
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
     "baseUrl": ".",
     "paths": {
-      "@astrobitClient": [
-        "src/astrobit/prisma/client.ts"
-      ],
-      "@codegearsClient": [
-        "./prisma/client.ts"
-      ]
     }
   },
   "include": [
-    "src/**/prisma/generated",
-    "src/**/prisma/*.ts",
+    // "src/**/prisma",
+    // "src/**/prisma/*.ts",
     "src"
   ],
   // "ts-node": {

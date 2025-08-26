@@ -7,10 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "devserve": "nodemon dist/index.js",
     "devbuild": "concurrently \"npx tsc --watch\" \"npx tsc-alias --watch\" \"npm run copy-generated\"",
-    "build": "npx tsc",
-    "serve": "node dist/index.js",
-    "copy-generated_old": "cp -r src/codegears/prisma/generated dist/codegears/prisma/generated",
-    "copy-generated": "cpy src/*/prisma/generated/**/*.js dist --parents"
+    "build": "npx tsc && prisma generate",
+    "serve": "node dist/index.js"
   },
   "repository": {
     "type": "git",

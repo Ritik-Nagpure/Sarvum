@@ -1,7 +1,9 @@
 import { payloadTodo } from '../../utils/interfaces.js'
 import { validTodoStrings } from './todo.validator.js'
- 
-import prisma from '../../prisma/index.js';
+
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
 
 export const createTodoService = (todoModel: payloadTodo) => {
     console.log('Inside create todo services', todoModel);
@@ -14,7 +16,7 @@ export const createTodoService = (todoModel: payloadTodo) => {
             }
         });
     }; 
-    crt();  
+    crt();
     console.log(todoModel)
 }
 
