@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL_ARYA")
+}
+
+
+
+model Prompt {
+  id        String   @id @default(uuid()) @map("_id")
+  userId    String
+  input     String
+  response  String
+  timestamp DateTime @default(now())
+}
+
+model Feedback {
+  id        String   @id @default(uuid()) @map("_id")
+  promptId  String
+  rating    Int
+  comment   String?
+}

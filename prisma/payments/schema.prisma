@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL_PAYMENTS")
+}
+
+// Todos
+
+model Transaction {
+  id          String   @id @default(uuid())
+  userId      String
+  amount      Float
+  currency    String
+  status      String   // "pending", "completed", "failed"
+  service     String   // e.g. "vastra", "rides"
+  createdAt   DateTime @default(now())
+}
+
+model Invoice {
+  id            String   @id @default(uuid())
+  transactionId String
+  details       String
+  issuedAt      DateTime @default(now())
+
+  // transaction   Transaction @relation(fields: [transactionId], references: [id])
+}

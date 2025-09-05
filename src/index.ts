@@ -12,6 +12,8 @@ import arya from './arya/arya.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+import { logMessage } from './utils/logger.js';
+
 dotenv.config();
 
 const port = process.env.PORT || 8080;
@@ -26,14 +28,15 @@ const __dirname = path.dirname(__filename);
 
 // sarvum.use(express.static(path.join(dirname, 'public')));
 sarvum.get('/', (req: Request, res: Response) => {
-    res.sendFile(path.join(__dirname, 'defaults', 'error_404.html'));
+    res.sendFile(path.join(__dirname, 'defaults', 'home.html'));
 });
 
 sarvum.get('/service_status', (req: Request, res: Response) => {
     const status = {
         status: 'App is running fine for now !',
         code: 200
-    }
+    };
+    logMessage('Status is requested.');
     res.json(status)
 });
 
@@ -54,7 +57,11 @@ sarvum.use((req: Request, res: Response) => {
     res.sendStatus(404)
 })
 
+// sarvum.get('/', (req: Request, res: Response) => {
+//     res.sendFile(path.join(__dirname, 'defaults', 'error_404.html'));
+// });
 
 sarvum.listen(port, () => {
     console.log(`Application is running of port ${port}`)
+    logMessage(`Application is running of port ${port}`)
 });

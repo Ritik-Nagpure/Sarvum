@@ -1,12 +1,10 @@
-//🧩Don't Edit this file.✨Generated in Tue Aug 26 2025 00:30:26 GMT+0530 (India Standard Time)✨
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = env("DATABASE_URL_CODEGEARS")
 }
 
 // Todos
