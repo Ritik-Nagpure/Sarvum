@@ -1,4 +1,4 @@
-import { appendFileSync } from 'fs';
+// import { appendFileSync } from 'fs';
 
 /**
  * Logs a message with timestamp to log.txt
@@ -9,7 +9,7 @@ export function logMessage(message: string): void {
   const logEntry = `[${timestamp}] ${message}\n`;
 
   try {
-    appendFileSync('log.txt', logEntry, 'utf8');
+    // appendFileSync('log.txt', logEntry, 'utf8');
     console.log('Logged:', logEntry.trim());
   } catch (error) {
     console.error('Failed to write to log file:', error);
