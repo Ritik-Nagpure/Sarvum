@@ -17,18 +17,19 @@ import { logMessage } from './utils/logger.js';
 dotenv.config();
 
 const port = process.env.PORT || 8080;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const sarvum: Express = express();
 sarvum.use(cors());
 sarvum.use(express.json());
 sarvum.use(express.urlencoded({ extended: true }));
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+sarvum.use('/assets', express.static(path.join(__dirname, '..', 'public', 'assets')));
+sarvum.use('/defaults', express.static(path.join(__dirname, '..', 'public', 'defaults')));
 
-// sarvum.use(express.static(path.join(dirname, 'public')));
 sarvum.get('/', (req: Request, res: Response) => {
-    res.sendFile(path.join(__dirname, 'defaults', 'home.html'));
+    res.sendFile(path.join(__dirname,  '..', 'public', 'index.html'));
 });
 
 sarvum.get('/service_status', (req: Request, res: Response) => {
@@ -54,12 +55,8 @@ sarvum.use('/api/rihal/vastra', vastra);
 
 // when nothing matches use this
 sarvum.use((req: Request, res: Response) => {
-    res.sendStatus(404)
-})
-
-// sarvum.get('/', (req: Request, res: Response) => {
-//     res.sendFile(path.join(__dirname, 'defaults', 'error_404.html'));
-// });
+    res.status(404).sendFile(path.join(__dirname, '..', 'public', 'defaults', 'error_404.html'));
+});
 
 sarvum.listen(port, () => {
     console.log(`Application is running of port ${port}`)

@@ -2,13 +2,13 @@
   "name": "sarvum",
   "version": "1.0.0 @Beta",
   "description": "All in one website to AI tools, shop, chat , Dailty tasks scheduler, team management, etc",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devserve": "nodemon dist/index.js",
+    "devserve": "nodemon dist/main.js",
     "devbuild": "concurrently \"npx tsc --watch\" \"npx tsc-alias --watch\" \"npm run copy-generated\"",
     "build": "npx tsc && prisma generate --schema 'prisma/codegears/schema.prisma'",
-    "serve": "node dist/index.js"
+    "serve": "node dist/main.js"
   },
   "repository": {
     "type": "git",
