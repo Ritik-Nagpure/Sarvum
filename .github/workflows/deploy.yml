@@ -12,10 +12,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Trigger Render Deploy
+      - name: Trigger Render Deploy       
         run: |
           curl -X POST \
             -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
             -H "Content-Type: application/json" \
-            -d '{"serviceId":"${{ secrets.RENDER_SERVICE_ID }}"}' \
             https://api.render.com/v1/services/${{ secrets.RENDER_SERVICE_ID }}/deploys
