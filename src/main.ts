@@ -60,5 +60,4 @@ sarvum.use((req: Request, res: Response) => {
 
 sarvum.listen(port, () => {
     console.log(`Application is running of port ${port}`)
-    logMessage(`Application is running of port ${port}`)
 });

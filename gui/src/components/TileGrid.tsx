@@ -7,6 +7,7 @@ const tiles: { key: ApiKey; label: string; desc: string }[] = [
   { key: 'codegears', label: 'Codegears', desc: 'Coding tools backend' },
   { key: 'rides', label: 'Rihal Rides', desc: 'Ride booking and tracking' },
   { key: 'vastra', label: 'Rihal Vastra', desc: 'API for clothing store' },
+  { key: 'gatest', label: 'Rihal Github Actions', desc: 'API for clothing store' }
 ];
 
 const TileGrid = ({ onSelect }: { onSelect: (key: ApiKey) => void }) => (

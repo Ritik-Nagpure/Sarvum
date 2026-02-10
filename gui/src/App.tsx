@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import TileGrid from './components/TileGrid';
 import DetailsView from './components/DetailsView';
 
-export type ApiKey = 'arya' | 'astrobit' | 'codegears' | 'rides' | 'vastra';
+export type ApiKey = 'arya' | 'astrobit' | 'codegears' | 'rides' | 'vastra' | 'gatest';
 
 const apiData = {
   arya: {
@@ -34,6 +34,12 @@ const apiData = {
   },
   vastra: {
     title: 'Rihal Vastra',
+    endpoint: '/api/rihal/vastra',
+    description: 'Inventory and fashion orders API.',
+    sample: `GET /api/rihal/vastra/items\nResponse:\n{\n  "items": [\n    { "id": "v001", "name": "Kurta", "stock": 12 },\n    { "id": "v002", "name": "Saree", "stock": 5 }\n  ]\n}`,
+  },
+  gatest: {
+    title: 'Rihal Test auto Deployment through Github Actions',
     endpoint: '/api/rihal/vastra',
     description: 'Inventory and fashion orders API.',
     sample: `GET /api/rihal/vastra/items\nResponse:\n{\n  "items": [\n    { "id": "v001", "name": "Kurta", "stock": 12 },\n    { "id": "v002", "name": "Saree", "stock": 5 }\n  ]\n}`,

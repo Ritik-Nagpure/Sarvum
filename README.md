@@ -28,6 +28,7 @@ Sarvum is a modular Node.js + TypeScript monorepo designed to host multiple micr
 ```
 .
 └── sarvum /
+    ├── public           # Static files and content to share 
     ├── src              # Service logic 
     ├── prisma           # DB schemas 
     ├── docs             # Architecture & API documentation 
@@ -56,7 +57,13 @@ Code
 
 ## 📦 Deployment
 
-Sarvum is optimized for deployment on Render. See docs/deployment.md for CI/CD setup.
+Sarvum is optimized for deployment on Render. See docs/deployment.md for CI/CD setup.  
+
+Below are some links to utilize the deployed service for free.
+1. [Sarvum API Link](https://sarvum.onrender.com/)
+2. [Sarvum ElasticSearch + Kibana]()
+3. [Sarvum Grafana Link](https://sarvum.grafana.net/)
+
 
 ## 📚 Documentation
 - Architecture: `docs/architecture.md`
